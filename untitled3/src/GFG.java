@@ -1,10 +1,10 @@
 import java.io.*;
+import java.util.Scanner;
+
 class GFG
 {
-
-    public static int N = 3; // Number of unknowns
-
-    // function to get matrix content
+    Scanner sc = new Scanner(System.in);
+    public int N = sc.nextInt();
     static void gaussianElimination(double mat[][])
     {
 
@@ -113,8 +113,7 @@ class GFG
     // function to calculate the values of the unknowns
     static void backSub(double mat[][])
     {
-        double x[]
-                = new double[N]; // An array to store solution
+        double x[] = new double[N]; // An array to store solution
 
     /* Start calculating from last equation up to the
            first */
@@ -149,14 +148,22 @@ class GFG
         }
     }
 
-    // Driver program
     public static void main(String[] args)
     {
+        Scanner sc1 = new Scanner(System.in);
 
-        /* input matrix */
-        double mat[][] = { { 3.0, 2.0, -4.0, 3.0 },
-                { 2.0, 3.0, 3.0, 15.0 },
-                { 5.0, -3, 1.0, 14.0 } };
+        double mat[][] = { { 0, 0, 0, 0 },
+                { 0, 0, 0, 0 },
+                { 0, 0, 0, 0 } };
+
+        for (int i = 0; i < N; i++)
+        {
+            for (int j = 0; j <=N; j++)
+            {
+                mat[i][j]=sc1.nextDouble();
+            }
+
+        }
 
         gaussianElimination(mat);
     }
